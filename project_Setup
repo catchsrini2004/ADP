@@ -1,0 +1,7 @@
+1. download the project and import the project in visual studio  or other IDE.
+2. in terminal get into the project folder and run the command - npm install -g @angular/cli@latest
+
+once done .
+3. run the command npm serve
+4. in the browser enter the url  - http://localhost:4200
+
