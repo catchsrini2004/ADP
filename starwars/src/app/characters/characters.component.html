@@ -1,0 +1,60 @@
+
+<app-appheader></app-appheader>
+<div  style="text-align: center; align-items: center;background-color: lightyellow;">
+
+  <h2 *ngIf="showLoading">
+    	  Loading Chracters of Star war .......
+  </h2> 
+
+
+
+  <div *ngIf="!showLoading">
+
+ <h3>Select a Character  from this Menu </h3>
+
+      
+
+      <select   (change) = 'changeValue()'  [(ngModel)]='selectedChar' class="custom-select custom-select-lg mb-3">
+         
+        <option  *ngFor="let data of charData.characters" [value]="data.url">{{data.name}}</option>
+      </select>
+
+  </div>
+
+
+
+ 
+  <br>
+  <h2 *ngIf="showChar">
+    Loading Chracter details.please wait ...
+</h2> 
+
+ 
+<div *ngIf="showFilmDetails">
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Release Date</th>
+         
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of loadMoviesData;let i = index">
+        <td>{{i + 1}}</td>
+         <td>{{data.title}}</td>
+         <td>{{data.release_date | date : 'fullDate'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h2 *ngIf="errorLoad">
+   Error in loading the movies of the character ...
+</h2> 
+
+
+
+</div>
